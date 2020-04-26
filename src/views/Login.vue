@@ -5,6 +5,15 @@
         <mt-button icon="back"></mt-button>
       </router-link>
     </mt-header>
+      <mt-cell-swipe
+              title="text"
+              :right="[
+    {
+      content: 'Delete',
+      style: { background: 'red', color: '#fff' },
+      handler: () => this.$messagebox('delete')
+    }
+  ]"></mt-cell-swipe>
     <div class="outer">
         <span class="login">登录</span>
         <form action="" class="form">

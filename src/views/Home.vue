@@ -10,28 +10,46 @@
         <div class="content">
             <!-- v-model="" :强制绑定，绑定data中的数据-->
             <!-- for循环中的item才是当前组件取到的值 -->
+<!--            <mt-cell-swipe-->
+<!--                    :key="item.id"-->
+<!--                    :right="[-->
+<!--                    {-->
+<!--                        content: 'Delete',-->
+<!--                        style: {background: 'red', color: '#fff'},-->
+<!--                        handler: () => this.$messagebox('delete')-->
+<!--                    }-->
+<!--                ]"-->
+<!--                    v-for="item in form"-->
+<!--            >-->
+<!--                <div class="content_item">-->
+<!--                    <img :src="item.image" alt height="30" style="border-radius: 5px;" width="30"/>-->
+<!--                    <div>-->
+<!--                        <span class="content_item_title">{{item.title}}</span>-->
+<!--                        <span class="content_item_time">  {{item.time}}</span>-->
+<!--                    </div>-->
+<!--                    <span class="content_item_home">{{item.content}}</span>-->
+<!--                </div>-->
+<!--            </mt-cell-swipe>-->
+            <div>
             <mt-cell-swipe
-                :key="item.id"
-                :right="[
-                    {
+                    :right="[{
                         content: 'Delete',
-                        style: {background: 'red', color: '#fff'},
-                        handler: () => this.$messagebox('delete')
-                    }
-                ]"
-                v-for="item in form"
+                        style: { background: 'red', color: '#fff' },
+                        handler: () => this.$messagebox('确认删除？')
+                    }]"
+                    v-for="msg in 10" :key="msg.id"
             >
                 <div class="content_item">
-                    <img :src="item.image" alt height="30" style="border-radius: 5px;" width="30"/>
+                    <img src="" alt height="30" style="border-radius: 5px;" width="30"/>
                     <div>
-                        <span class="content_item_title">{{item.title}}</span>
-                        <span class="content_item_time">  {{item.time}}</span>
+                        <span class="content_item_title"></span>
+                        <span class="content_item_time"></span>
                     </div>
-                    <span class="content_item_home">{{item.content}}</span>
+                    <span class="content_item_home"></span>
                 </div>
             </mt-cell-swipe>
+            </div>
         </div>
-
         <mt-tabbar>
             <mt-tab-item :id="item.id" :key="item.id" @click.native="jumpToNeed(item.link)" v-for="item in list">
         <span style="display: block">
