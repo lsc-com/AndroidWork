@@ -3,23 +3,23 @@
         <div class="header">
             <span class="head-content">微信</span>
             <span class="search_add">
-        <i class="iconfont icon-sousuo"></i>
-        <i class="iconfont icon-tianjia"></i>
-      </span>
+                <i class="iconfont icon-sousuo"></i>
+                <i class="iconfont icon-tianjia"></i>
+            </span>
         </div>
         <div class="content">
             <!-- v-model="" :强制绑定，绑定data中的数据-->
             <!-- for循环中的item才是当前组件取到的值 -->
             <mt-cell-swipe
-                    :key="item.id"
-                    :right="[
-          {
-            content: 'Delete',
-            style: { background: 'red', color: '#fff' },
-            handler: () => this.$messagebox('delete')
-          }
-        ]"
-                    v-for="item in form"
+                :key="item.id"
+                :right="[
+                    {
+                        content: 'Delete',
+                        style: {background: 'red', color: '#fff'},
+                        handler: () => this.$messagebox('delete')
+                    }
+                ]"
+                v-for="item in form"
             >
                 <div class="content_item">
                     <img :src="item.image" alt height="30" style="border-radius: 5px;" width="30"/>
