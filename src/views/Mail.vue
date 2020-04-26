@@ -39,14 +39,12 @@
         </mt-index-list>
 
         <mt-tabbar>
-            <mt-tab-item :id="item.id" :key="item.id" @click.native="jumpToNeed" v-for="item in list">
-                <router-link :to="{name: item.link}">
+            <mt-tab-item :id="item.id" :key="item.id" @click.native="jumpToNeed(item.link)" v-for="item in list">
                     <span style="display: block">
                       <svg aria-hidden="true" class="icon">
                         <use :xlink:href="item.icon"/>
                       </svg>
                     </span>
-                </router-link>
                 <span style="display:block;text-align:center">{{item.name}}</span>
             </mt-tab-item>
         </mt-tabbar>
@@ -78,7 +76,7 @@
                 ],
                 list: [
                     {id: "tab1", icon: "#icon-weixinxiaoxi", name: "微信", link: 'Home'},
-                    {id: "tab2", icon: "#icon-tongxunlu", name: "通讯录", link: ''},
+                    {id: "tab2", icon: "#icon-tongxunlu", name: "通讯录", link: 'Mail'},
                     {id: "tab3", icon: "#icon-faxian3", name: "发现", link: 'Find'},
                     {id: "tab4", icon: "#icon-wo1", name: "我",link:'About'}
                 ],
@@ -151,9 +149,9 @@
                 ]
             };
         },
-        mehtods: {
-            jumpToNeed() {
-                this.$router.push({path: '/home'});
+        methods: {
+            jumpToNeed(link) {
+                this.$router.push({path: link});
             }
         }
     };
